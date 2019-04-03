@@ -79,6 +79,9 @@ public class FileReaderSpout extends BaseRichSpout {
         //declarer.declare(new Fields(DemoConstants.FIELD_LINE)); //应该采取这种方式
     }
 
+    /**
+     * 在fileReader结束之后关闭对应的流
+     */
     @Override
     public void close() {
         if (br != null) {

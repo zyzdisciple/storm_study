@@ -60,6 +60,9 @@ public class CountBolt extends BaseRichBolt {
         return count == null ? 0 : count;
     }
 
+    /**
+     * 与Spout的close方法类似
+     */
     @Override
     public void cleanup() {
 
