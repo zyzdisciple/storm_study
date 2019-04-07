@@ -1,0 +1,12 @@
+{sessionId: 201904070001, userId: 0001, endTime: 1, end: false, content: 1}
+{sessionId: 201904070001, userId: 0001, endTime: 2, end: false, content: 2}
+{sessionId: 201904070001, userId: 0001, endTime: 3, end: false, content: 123}
+{sessionId: 201904070001, userId: 0001, endTime: 4, end: false, content: 321}
+{sessionId: 201904070001, userId: 0001, endTime: 5, end: false, content: 22}
+{sessionId: 201904070001, userId: 0001, endTime: 6, end: false, content: 112}
+{sessionId: 201904070001, userId: 0001, endTime: 7, end: true, content: 112}
+{sessionId: 201904070002, userId: 0001, endTime: 7, end: false, content: 78}
+{sessionId: 201904070002, userId: 0001, endTime: 7, end: false, content: 98}
+{sessionId: 201904070002, userId: 0001, endTime: 7, end: false, content: 78}
+{sessionId: 201904070002, userId: 0001, endTime: 7, end: false, content: 88}
+{sessionId: 201904070002, userId: 0001, endTime: 7, end: false, content: 12}

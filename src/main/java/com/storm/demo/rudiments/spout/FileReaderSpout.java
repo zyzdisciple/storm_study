@@ -34,6 +34,7 @@ public class FileReaderSpout extends BaseRichSpout {
      * @param topologyContext
      * @param spoutOutputCollector
      */
+    @Override
     public void open(Map conf, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
         this.collector = spoutOutputCollector;
         try {
@@ -50,6 +51,7 @@ public class FileReaderSpout extends BaseRichSpout {
      * 需要特别注意的是，这个方法一定是不能够被阻塞的， 也不能够抛出异常，
      * 抛出异常会让当然程序停止，阻塞严重影响性能。
      */
+    @Override
     public void nextTuple() {
         try {
             //向外发射数据
@@ -71,6 +73,7 @@ public class FileReaderSpout extends BaseRichSpout {
      * 当然declare不止这一种重载方法，其余的暂时不用理会。
      * @param declarer
      */
+    @Override
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
         /*Fields名称这里，一般使用中会拆出来，定义为常量，而不是直接字符串，
         * 包括Stream等其他属性也是，因为很有可能在其他地方会被用到，所以一般拆分成常量

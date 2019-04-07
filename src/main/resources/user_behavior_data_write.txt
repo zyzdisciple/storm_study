@@ -1,0 +1,1 @@
+MessageInfo{sessionId='201904070001', userId='0001', endTime=7, end=true, content='001,002,123,321,022,112,112'}
