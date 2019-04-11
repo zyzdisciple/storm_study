@@ -1,8 +1,8 @@
-package com.storm.demo.user_behavior;
+package com.storm.demo.guaranteed_message;
 
-import com.storm.demo.user_behavior.bolt.ContentStitchingBolt;
-import com.storm.demo.user_behavior.bolt.MessageWriterBolt;
-import com.storm.demo.user_behavior.spout.FileReaderSpout;
+import com.storm.demo.guaranteed_message.bolt.ContentStitchingBolt;
+import com.storm.demo.guaranteed_message.bolt.MessageWriterBolt;
+import com.storm.demo.guaranteed_message.spout.FileReaderSpout;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.generated.StormTopology;
@@ -32,9 +32,9 @@ public class UserBehaviorTopology {
         builder.setBolt(STREAM_FILE_WRITER_BOLT, new MessageWriterBolt(), 4).shuffleGrouping(STREAM_CONTENT_BOLT);
 
         Config conf = new Config();
-        conf.put(Config.TOPOLOGY_MESSAGE_TIMEOUT_SECS, 30);
         //当设置为true时, 且log level定义为info时, 会在控制台输出发射元组内容
         conf.setDebug(true);
+        conf.put(Config.TOPOLOGY_MAX_SPOUT_PENDING, 30000);
         StormTopology topology = builder.createTopology();
         LocalCluster cluster = new LocalCluster();
         cluster.submitTopology(TOPOLOGY_NAME, conf, topology);
